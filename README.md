@@ -1,4 +1,4 @@
-### Sample code to handle excel with C#
+### Sample code to handle Excel files with C#
 
 This sample code reads text files and generates Excel files.
 
