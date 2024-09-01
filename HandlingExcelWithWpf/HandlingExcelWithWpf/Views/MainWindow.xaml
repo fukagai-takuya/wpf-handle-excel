@@ -1,0 +1,38 @@
+<metro:MetroWindow x:Class="HandlingExcelWithWpf.Views.MainWindow"
+                   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                   xmlns:metro="http://metro.mahapps.com/winfx/xaml/controls"
+                   FontSize = "16"
+                   FontFamily="{DynamicResource MahApps.Fonts.Family.Window.Title}"
+                   GlowBrush="{DynamicResource MahApps.Brushes.Accent}"
+                   Style="{StaticResource MaterialDesignWindow}"
+                   Title="{Binding WindowTitle}">
+    <StackPanel Margin="10">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>                
+            </Grid.RowDefinitions>
+            
+            <Button Grid.Row="0" Grid.Column="0" Margin="5" Content="{Binding SelectFormatFileButtonName}" Command="{Binding SelectFormatFile}" />
+            <TextBox Grid.Row="0" Grid.Column="1" IsReadOnly="True"
+                     TextWrapping="Wrap" Text="{Binding SelectedFormatFileName, Mode=OneWay}" />
+            
+            <Button Grid.Row="1" Grid.Column="0" Margin="5" Content="{Binding SelectLogFileButtonName}" Command="{Binding SelectLogFile}" />
+            <TextBox Grid.Row="1" Grid.Column="1" IsReadOnly="True"
+                     TextWrapping="Wrap" Text="{Binding SelectedLogFileName, Mode=OneWay}" />
+
+            <Button Grid.Row="2" Grid.Column="0" Margin="5" Content="{Binding SelectOutputDirButtonName}" Command="{Binding SelectOutputDir}" />
+            <TextBox Grid.Row="2" Grid.Column="1" IsReadOnly="True"
+                     TextWrapping="Wrap" Text="{Binding SelectedOutputDirName, Mode=OneWay}" />
+            
+            <Button Grid.Row="3" Grid.Column="0" Margin="5" Content="{Binding GenerateExcelFileButtonName}" Command="{Binding GenerateExcelFile}" />
+        </Grid>
+    </StackPanel>
+</metro:MetroWindow>
