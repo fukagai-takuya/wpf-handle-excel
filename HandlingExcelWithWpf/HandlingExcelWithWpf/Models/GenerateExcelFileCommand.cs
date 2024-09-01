@@ -46,10 +46,10 @@ public class GenerateExcelFileCommand : IRelayCommand
 
     private void OutputExcelFile()
     {
-        // ブック読み込み
+        // Read Excel book
         IWorkbook book = WorkbookFactory.Create(_MainWindowViewModel.SelectedFormatFileName);
 
-        // シート名からシート取得
+        // Get Excel sheet with sheet name
         ISheet sheet = book.GetSheet(_SheetName);
 
         int sheetNum = 1;
@@ -90,7 +90,7 @@ public class GenerateExcelFileCommand : IRelayCommand
 
         DateTime dateTime = DateTime.Now;
         string dateTimeStr = dateTime.ToString("yyyy-MM-dd-HH-mm-ss");
-        string outputFileName = $"{_MainWindowViewModel.SelectedOutputDirName}\\StateSheets{dateTimeStr}.xlsx";
+        string outputFileName = $"{_MainWindowViewModel.SelectedOutputDirName}\\OutputSheets{dateTimeStr}.xlsx";
         
         using(var fs = new FileStream(outputFileName, FileMode.Create))
         {
